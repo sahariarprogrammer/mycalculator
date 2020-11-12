@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>practice</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="row my-5">
+		<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto main">
+			<div class="row">
+			  <form class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto" >
+			   <input type="text" name="" id="dis" class="screen" value="">
+			  </form>
+			</div>
+			<div class="row" > 
+				<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto">
+				<button id="0" class="btnn butam">0</button>
+				<button id="1" class="btnn butam">1</button>
+				<button id="2" class="btnn butam">2</button>
+				<button id="3" class="btnn butam">3</button>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto">
+				<button id="4" class="btnn butam">4</button>
+				<button id="5" class="btnn butam">5</button>
+				<button id="6" class="btnn butam">6</button>
+				<button id="7" class="btnn butam">7</button>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto">
+				<button id="8" class="btnn butam">8</button>
+				<button id="9" class="btnn butam">9</button>
+				<button id="plus" class="btnn butam">+</button>
+				<button id="minus" class="btnn butam">-</button>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto">
+				<button  class="btnn butam">(</button>
+				<button  class="btnn butam">)</button>
+				<button id="mul" class="btnn butam">*</button>
+				<button id="div" class="btnn butam">/</button>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto">
+				<button id="point" class="btnn butam">.</button>
+				<button class="butam" id="root">√</button>
+				<button class="butam" id="pi">π</button>
+				<button class="butam" id="sin">Sin</button>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto">
+				<button class="butam" id="cos">Cos</button>
+				<button class="butam" id="tan">Tan</button>
+				<button class="butam" id="log">Log</button>
+				<button class="butam" id="exp">e^</button>
+				</div>
+			</div>
+			<div class="row"> 
+				<div class="col-xl-8 col-lg-8 col-md-10 col-11 mx-auto">
+				<button class="butam" id="ln">ln</button>
+				<button class="butam" id="result">=</button>
+				<button class="butam" id="clear">clear</button>
+				</div>
+			</div>
+			</div>
+		
+		</div>
+	</div>
+
+
+
+
+<script>
+
+//j button click korbo seta diplay te print hbe
+const digits=document.querySelectorAll(".btnn")
+var display=document.querySelector(".screen").value
+var cal="";
+var Result=document.querySelector("#result")
+var clearall=document.querySelector("#clear")
+var Root=document.querySelector("#root")
+var Pi=document.querySelector("#pi")
+var Sin=document.querySelector("#sin")
+var Cos=document.querySelector("#cos")
+var Tan=document.querySelector("#tan")
+var Log=document.querySelector("#log")
+var Exp=document.querySelector("#exp")
+var Ln=document.querySelector("#ln")
+var Clear=document.querySelector("#clear")
+digits.forEach(function(a){
+
+	a.addEventListener("click",function(){
+		
+			
+
+			display=display+a.innerHTML
+			cal=cal+a.innerHTML
+			console.log(cal)
+			document.querySelector(".screen").value=display
+			
+			
+
+	})
+})
+
+
+Result.addEventListener("click",function(){
+			<!-- console.log(display) -->
+		/*	<!-- root  -->
+				const displayarray=display.split("");
+	console.log(displayarray)
+	var rootcount=[]
+	displayarray.forEach(function(value,ind){
+		if(value==="√"){
+			<!-- console.log("root "+value+" "+"index "+ind) -->
+				rootcount.push(ind)
+			console.log(rootcount) 
+		
+		}
+		for(let i=0;i<rootcount.length;i++){
+			const afterrrot=display.slice(rootcount[i]+1,rootcount[i+1]-1)
+			<!-- console.log(afterrrot) -->
+			const afterrrotvalue=eval(afterrrot)
+			console.log(afterrrotvalue)
+			<!-- console.log(Math.sqrt(afterrrotvalue)) -->
+		}
+	
+	})*/
+
+
+	
+	
+	<!-- const output=eval(display) -->
+	console.log(cal)
+	const output=eval(cal)
+	document.querySelector(".screen").value=output;
+	display="";
+	cal=""
+})
+
+Root.addEventListener("click",function(){
+	
+	cal=cal+"Math.sqrt("
+	console.log(cal)
+	display=display+"√("
+document.querySelector(".screen").value=display
+})
+Sin.addEventListener("click",function(){
+	
+	cal=cal+"Math.sin(((Math.PI)/180)*"
+	console.log(cal)
+	display=display+"Sin("
+document.querySelector(".screen").value=display
+})
+Cos.addEventListener("click",function(){
+	
+	cal=cal+"Math.cos(((Math.PI)/180)*"
+	console.log(cal)
+	display=display+"Cos("
+document.querySelector(".screen").value=display
+})
+Tan.addEventListener("click",function(){
+	
+	cal=cal+"Math.tan(((Math.PI)/180)*"
+	console.log(cal)
+	display=display+"Tan("
+document.querySelector(".screen").value=display
+})
+Log.addEventListener("click",function(){
+	
+	cal=cal+"Math.log10("
+	console.log(cal)
+	display=display+"Log("
+document.querySelector(".screen").value=display
+})
+Pi.addEventListener("click",function(){
+	
+	cal=cal+("Math.PI")
+	console.log(cal)
+	display=display+"π"
+document.querySelector(".screen").value=display
+})
+Exp.addEventListener("click",function(){
+	
+	cal=cal+("Math.exp(")
+	console.log(cal)
+	display=display+"e^("
+document.querySelector(".screen").value=display
+})
+Ln.addEventListener("click",function(){
+	
+	cal=cal+("Math.log(")
+	console.log(cal)
+	display=display+"ln("
+document.querySelector(".screen").value=display
+})
+
+Clear.addEventListener("click",function(){
+	cal=""
+	console.log(cal)
+	display=""
+	document.querySelector(".screen").value=display
+})
+
+
+
+</script>
+</body>
+</html>
